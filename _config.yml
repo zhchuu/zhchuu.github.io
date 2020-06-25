@@ -1,0 +1,15 @@
+# Site settings
+title: Drinking Bubble Tea
+description: Notes about Machine Learning, Linux and Computer Vision.
+email: 
+baseurl: ""
+url: "https://zhchuu.github.io"
+github_username:  zhchuu
+
+# Build settings
+theme: minima
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - kramdown
