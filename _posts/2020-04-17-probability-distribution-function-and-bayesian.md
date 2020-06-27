@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Probability Distribution Function and Bayesian"
-date: 2020-06-25
+date: 2020-04-17
 categories: blog
 permalink: /:categories/:year/:month/:title.html
 ---

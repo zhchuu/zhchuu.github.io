@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Understanding Normalizing Flows"
-date: 2020-06-27
+date: 2020-04-27
 categories: blog
 permalink: /:categories/:year/:month/:title.html
 ---

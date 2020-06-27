@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Product Operations of Matrix and Tensor"
-date: 2020-06-26
+date: 2020-04-23
 categories: blog
 permalink: /:categories/:year/:month/:title.html
 ---
