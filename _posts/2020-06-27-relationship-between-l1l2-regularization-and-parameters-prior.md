@@ -67,3 +67,10 @@ Dropping some constants:
 $$
 \sum_{n=1}^N -\frac{1}{\sigma^2} (y_n - \beta x_n)^2 - \frac{ \vert \beta \vert}{b} + const  \tag{8}
 $$
+
+
+**Reference**
+
+[why-is-the-l2-regularization-equivalent-to-gaussian-prior](https://stats.stackexchange.com/questions/163388/why-is-the-l2-regularization-equivalent-to-gaussian-prior)
+
+[Weight Uncertainty in Neural Networks](https://arxiv.org/abs/1505.05424)
