@@ -6,7 +6,7 @@ categories: blog
 permalink: /:categories/:year/:month/:title.html
 ---
 
-接着上一篇文章的思路（[Ensemble Learning I (Bagging and Boosting)](zhchuu.github.io/blog/2020/07/ensemble-learning-i-bagging-and-boosting.html)），下面介绍Boosting方法的另外两种拓展。（Formula部分提供理解本文推导所需的数学公式）
+接着上一篇文章的思路（[Ensemble Learning I (Bagging and Boosting)](https://zhchuu.github.io/blog/2020/07/ensemble-learning-i-bagging-and-boosting.html)），下面介绍Boosting方法的另外两种拓展。（Formula部分提供理解本文推导所需的数学公式）
 
 ## 1. GBDT
 
