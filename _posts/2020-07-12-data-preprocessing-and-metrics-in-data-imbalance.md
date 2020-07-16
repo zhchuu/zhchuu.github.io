@@ -153,7 +153,7 @@ AUC：Area under curve
 指曲线下的面积大小。
 
 ROC：Receiver Operating Characteristic  \\
-ROC曲线是基于混淆矩阵得出的，纵轴为TP，横轴为FP。我们调整分类的threshold，TP值和FP值会变化，我们希望TP值很高的同时FP值很低，经过调整找到这样的threshold。曲线越接近左上方越好。这个指标也反映模型的**范化性**。
+ROC曲线是基于混淆矩阵得出的，纵轴为TP，横轴为FP。我们调整分类的threshold，TP值和FP值会变化，我们希望TP值很高的同时FP值很低，经过调整找到这样的threshold。曲线越接近左上方越好。这个指标也反映模型的**泛化性**。
 
 PR-AUC：
 纵轴为Precision，横轴为Recall。曲线越接近右上方越好。
