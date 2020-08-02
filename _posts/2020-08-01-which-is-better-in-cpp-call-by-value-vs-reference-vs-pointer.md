@@ -59,4 +59,5 @@ void func(vector<int>& val2, string& val2){
 ## 参考与推荐阅读
 
 [Which-is-faster-call-by-value-or-call-by-reference](https://www.quora.com/Which-is-faster-call-by-value-or-call-by-reference)  \\
+[Chrome: 70% of all security bugs are memory safety issues](https://www.zdnet.com/article/chrome-70-of-all-security-bugs-are-memory-safety-issues/)  \\
 [对开发者友好 or 对机器友好？](https://envoy.ink/blog/2018/07/19/developer-friendly-or-machine-friendly/)
