@@ -74,10 +74,10 @@ def func():
 def func():
     data = np.random.randn(500, 32, 32, 3)  # NumPy array
 
-    selected = np.array([])  # NumPy array
+    selected = np.empty((0, 32, 32, 3))  # NumPy array
     for _ in range(100):
         i = np.random.randint(low=0, high=len(data))
-        np.append(selected, data[i])
+        selected = np.concatenate((selected, np.expand_dims(data[i], axis=0)))
         data = np.delete(data, i, axis=0)  # Remove it to avoid duplicative selection
 ```
 
@@ -89,7 +89,7 @@ def func():
 
 ### 4.3 混合存储
 
-当时写这段代码的时候我疏于考虑，传入的数据是NumPy数组，但是我却用List去存储选择的数据，代码如下：
+当时写这段代码的时候我疏于考虑，传入的数据是NumPy数组，用List去存储选择的数据，产生了一些问题，代码如下：
 
 ```Python
 def func():
@@ -102,7 +102,7 @@ def func():
         data = np.delete(data, i, axis=0)  # Remove it to avoid duplicative selection
 ```
 
-非常不建议将NumPy和List混合在一起使用，以上是错误示范。当时写完后整个程序的功能没有问题，所以后续没有仔细检查，导致没有发现问题。
+当NumPy和List混合在一起使用时，要格外注意，以上就是一个例子。当时写完后整个程序的功能没有问题，所以后续没有仔细检查，导致没有发现问题。
 
 内存占用测试如下：
 
@@ -127,7 +127,7 @@ def func():
    array([1, 3])
    >>> 
    ```
-   2) $$4.2$$和$$4.3$$的内存占用测试结果中，最后一行（np.delete）都有$$11$$MiB的内存Increment；
+   2) $$4.2$$和$$4.3$$的内存占用测试结果中，最后一行（np.delete）都有$$11$$MiB的内存Increment，for循环一共执行100次，$$11MiB*100 = 1100MiB$$；
 
    3) 看NumPy[源码](https://github.com/numpy/numpy/blob/master/numpy/lib/function_base.py#L4296)的np.delete部分。
    
@@ -137,11 +137,13 @@ def func():
 
 ### 5.2 解决方案
 
-1. 最好的解决方案是统一使用NumPy或List；（能用NumPy是最好的，无论对于内存占用还是CPU资源消耗都经过优化）；
+1. 最好的解决方案是统一使用NumPy或List（能用NumPy是最好的，无论对于内存占用还是CPU资源消耗都经过优化），但很多情况也避免不了混用；
 
-2. List中每次append数据时，都使用tolist()转成List形式；
+2. List中每次append数据时，都使用tolist()转成List形式（selected.append(data[i].tolist())）；
 
-3. ... (如果了解了原理，修这个小BUG应该有各种各样的方法了)
+3. List中每次append数据时，都用np.array()转成新对象（selected.append(np.array(data[i]))）；
+
+4. ... (如果了解了原理，修这个小BUG应该有各种各样的方法了)
 
 ### 5.3 其他问题
 
