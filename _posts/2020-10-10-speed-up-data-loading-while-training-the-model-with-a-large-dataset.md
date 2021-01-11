@@ -20,12 +20,16 @@ permalink: /:categories/:year/:month/:title.html
 > accimage是Pytorch团队写的，基于JPEG-Turbo以及Intel IPP的一个图像库，仅支持RGB的JPEG的图像，可以用于部分替代PIL.Image。
 
 #### 安装：
-> $ conda install -c conda-forge accimage
+```bash
+$ conda install -c conda-forge accimage
+```
 
 #### 使用：
 
 启用后端：
+```bash
 > torchvision.set_image_backend('accimage')
+```
 
 可通过以下方法检查是否启用正确：
 ```C
@@ -70,8 +74,10 @@ def accimage_loader(path):
 > Pillow-SIMD是基于Pillow的，并且可以100%兼容、替换原来版本Pillow的图像库，可以理解为Pillow的加速版。SIMD代表：single instruction, multiple data。对大量数据进行同一种操作时，Pillow-SIMD会更快。
 
 #### 安装：
-> $ pip uninstall pillow \\
-> $ CC="cc -mavx2" pip install -U --force-reinstall pillow-simd
+```bash
+$ pip uninstall pillow
+$ CC="cc -mavx2" pip install -U --force-reinstall pillow-simd
+```
 
 #### 使用：
 不用改任何代码。
