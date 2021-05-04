@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "A Simple Example to Show How Compiler Optimize the Operation on Scalar"
+title: "A Simple Example to Show How GCC Compiler Optimizes the Operations on Scalar"
 date: 2021-05-03
 categories: blog
 permalink: /:categories/:year/:month/:title.html
@@ -9,7 +9,28 @@ permalink: /:categories/:year/:month/:title.html
 
 ## 1. 前言
 
-众所周知，编译器能够对程序进行一定程度的优化，它使得程序员能够更专注地写高可读性的代码，实现快速、简便的开发。编译器对程序的优化包括但不仅限于对标量操作的优化、对函数调用的优化、对循环体的优化等。本文用一个非常简单的例子，分析编译器对标量操作的优化方式。本文假设读者都学习过计算机体系结构课程，文中的一些概念只会简单介绍，不会详细展开说明。
+众所周知，编译器能够对程序进行一定程度的优化，它使得程序员能够更专注地写高可读性的代码，实现快速、简便的开发。编译器对程序的优化包括但不仅限于对标量操作的优化、对函数调用的优化、对循环体的优化等。本文用一个非常简单的例子，分析编译器对标量操作的优化方式。本文假设读者都学习过计算机体系结构课程，文中的一些概念只会简单介绍，不会详细展开说明。编译器的优化可以细分成前端优化和后端优化，前端优化是机器无关的优化，后端的优化是机器相关的优化，本文将它们作为一个整体看待。
+
+### 1.1 GCC与LLVM
+
+C/C++语言的编译器中较为著名的有`GCC`和`LLVM`。`GCC`的全称为GNU Compiler Collection，在1987年第一次被正式released，它的特点是兼容更多的平台（尤其是旧的架构或系统）；`LLVM`的全称是Low Level Virtual Machine，是2000年启动的项目，在2005年正式有团队着手将它扩展到多个操作系统平台，它的特点是使用一个统一的语言（IR）作为多种高级语言的中间表示，有更好的可维护性和可扩展性。两个编译器各有优点，`GCC`有更好的性能优化和平台兼容性，`LLVM`有更好的可扩展性和可读性，还可以自己定制优化。本文使用的编译器为`GCC`。
+
+
+### 1.2 机器环境
+
+我使用机器的内核版本为：
+
+```bash
+$ uname -r
+5.6.13-100.fc30.x86_64
+```
+
+我使用机器的`GCC`版本为：
+
+```bash
+$ gcc --version
+gcc (GCC) 9.3.1 20200408 (Red Hat 9.3.1-2)
+```
 
 
 ## 2. 生成汇编代码
@@ -32,13 +53,6 @@ int main(){
 ```
 
 在分析其编译器优化过程之前，首先生成汇编代码。
-
-我的GCC版本为：
-
-```bash
-$ gcc --version
-gcc (GCC) 9.3.1 20200408 (Red Hat 9.3.1-2)
-```
 
 Preprocessing：
 
@@ -160,7 +174,7 @@ $$
 
 他们物理上的分布如下图所示：
 
-![](/assets/a-simple-example-to-show-how-compiler-optimize-the-operation-on-scalar/rax_eax_ax.png)
+![](/assets/a-simple-example-to-show-how-gcc-compiler-optimizes-the-operations-on-scalar/rax_eax_ax.png)
 
 当一个$$64$$位的数字放入`rax`中后，读取`eax`即可获得该数字的低位的$$32$$位，读取`ax`即可获得该数字的低位的$$16$$位。以上关系对于`rdx`、`edx`和`dx`同理，`rdx`是$$64$$-bit的寄存器，`edx`是$$32$$-bit的寄存器，`dx`是$$16$$-bit的寄存器。
 
@@ -184,7 +198,7 @@ $$
 
 ## 5. 总结
 
-编译器对加减乘除的优化是最基本的优化，这里的展示也都是非常简单的例子，学习它们虽然对编程没有太多实质帮助，但了解汇编代码执行的过程总是没有坏处。编译器同样会对函数调用、循环体进行各种各样的优化，感兴趣的话可以阅读LLVM项目的[文档](https://llvm.org/docs/Passes.html)。
+编译器对加减乘除的优化是最基本的优化，这里的展示也都是非常简单的例子，学习它们虽然对编程没有太多实质帮助，但了解汇编代码执行的过程总是没有坏处。编译器同样会对函数调用、循环体进行各种各样的优化，感兴趣的话可以阅读`LLVM`项目的[文档](https://llvm.org/docs/Passes.html)。
 
 
 ## 参考
