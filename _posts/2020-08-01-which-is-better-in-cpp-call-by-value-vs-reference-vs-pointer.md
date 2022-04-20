@@ -61,7 +61,7 @@ int main() {
   std::cout << &x << " " << x << " " << *x << std::endl;
   callByReference(x);
 
-  free(x);
+  delete x;
 
   return 0;
 }
