@@ -32,9 +32,59 @@ void func(vector<int>& val2, string& val2){
 - 指针（Pointer）：一个存储着变量的内存地址的值。读取时需要先读取地址再获得变量的值，所以要用*符号引导。
 - 引用（Reference）：已经存在的变量的别名。从实现的角度看，也是记录变量的内存地址，所以相当于const pointer（编译器自动使用*引导）。
 
-根据定义可知，不考虑编译器优化、内存管理差别等因素，**在调用函数时使用指针或引用速度上无差别**。
+根据定义可知，不考虑编译器优化、内存管理差别等因素，**在调用函数时使用指针或引用速度上差别不大，但指针比引用多一次地址复制**。
 
-虽然在调用函数时速度无差别，但作为函数返回值时有需要注意的地方：引用在定义时就被分配了指向的变量（即不能为空），且无法修改指向其他变量；指针可以为空，且可以修改指向其他变量。所以，如果要求函数返回值不能为空，可以考虑使用引用作为返回值，否则需要额外一步检查指针是否为空。
+如下代码所示：
+```C
+#include <iostream>
+
+void callByPointer(int* x) {
+  *x = 999;
+  std::cout << &x << " " << x << " " << *x << std::endl;
+}
+
+void callByReference(int*& x) {
+  *x = 888;
+  std::cout << &x << " " << x << " " << *x << std::endl;
+}
+
+int main() {
+  int *x = new int();
+
+  std::cout << "Call by pointer:" << std::endl;
+  *x = 0;
+  std::cout << &x << " " << x << " " << *x << std::endl;
+  callByPointer(x);
+
+  std::cout << "\nCall by reference:" << std::endl;
+  *x = 0;
+  std::cout << &x << " " << x << " " << *x << std::endl;
+  callByReference(x);
+
+  free(x);
+
+  return 0;
+}
+
+```
+
+输出如下：
+```bash
+Call by pointer:
+0x7fffd83b4190 0x7fffd0a87e70 0
+0x7fffd83b4178 0x7fffd0a87e70 999
+
+Call by reference:
+0x7fffd83b4190 0x7fffd0a87e70 0
+0x7fffd83b4190 0x7fffd0a87e70 888
+```
+
+由输出可以看出：当传入参数是指针时，指针地址（&x）变化了，说明进行了指针地址的复制（&x'）；当传入参数是引用时，指针地址没变，说明不需要进行复制。无论是哪种方式，指针指向对象的地址（x）一直不变。它们的关系如下图所示。
+
+![](/assets/which-is-better-in-cpp-call-by-value-vs-reference-vs-pointer/pointer_vs_reference.png)
+
+
+虽然在调用函数时速度差别不大，但作为函数返回值时有需要注意的地方：引用在定义时就被分配了指向的变量（即不能为空），且无法修改指向其他变量；指针可以为空，且可以修改指向其他变量。所以，如果要求函数返回值不能为空，可以考虑使用引用作为返回值，否则需要额外一步检查指针是否为空。
 
 ## 3. Value vs. Reference
 
