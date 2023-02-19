@@ -8,7 +8,7 @@ permalink: /about/
 
 I am currently working in the area of Database Engines and Distributed Systems.
 
-Previously, I got the MS degree at the School of Computer Science and Engineering, Sun Yat-sen University. I researched some challenging problems (e.g., knowledge preserving, data bias, few-shot) of Machine Learning and Computer vision which are derived from the practical applications on Medical Image Analysis. I focused on Continual learning (or Incremental learning), exploring solutions to train Neural Networks continually.
+Previously, I got the MS degree at the School of Computer Science and Engineering, Sun Yat-sen University. Working in the [iSEE Lab](https://www.isee-ai.cn/index.html), I researched some challenging problems (e.g., knowledge preserving, data bias, few-shot) of Machine Learning and Computer vision which are derived from the practical applications on Medical Image Analysis. I focused on Continual learning (or Incremental learning), exploring solutions to train Neural Networks continually.
 
 My other interests include Digital Image Processing and Compiling Theory.
 
@@ -28,3 +28,11 @@ My other interests include Digital Image Processing and Compiling Theory.
 
 - 11/2019 [Ensemble Convolutional Neural Networks for Cell Classification in Microscopic Images](https://link.springer.com/chapter/10.1007/978-981-15-0798-4_5) (ISBI 2019 Workshop): An ensemble of state-of-the-art CNNs was adopted and ranked 5th in the ISBI 2019 C-NMC Challenge.
 
+
+**Awards and Honors**
+
+- Outstanding Graduate Award (top 2%), South China Normal University, 2019.
+
+- Third place (out of 77 teams), MICCAI 2018 grand challenge "ISIC 2018: Skin Lesion Analysis Towards Melanoma Detection", 2018.
+
+- Grand Prize for Asia and Pacific Mathematical Contest in Modeling (top 0.1%), 2018.
