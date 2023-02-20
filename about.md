@@ -33,6 +33,6 @@ My other interests include Digital Image Processing and Compiling Theory.
 
 - Outstanding Graduate Award (top 2%), South China Normal University, 2019.
 
-- Third place (out of 77 teams), MICCAI 2018 grand challenge "ISIC 2018: Skin Lesion Analysis Towards Melanoma Detection", 2018.
+- Fifth place (out of 450 teams), ISBI 2019 C-NMC Challenge: Classification in Cancer Cell Imaging, 2019.
 
 - Grand Prize for Asia and Pacific Mathematical Contest in Modeling (top 0.1%), 2018.
