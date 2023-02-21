@@ -33,6 +33,6 @@ My other interests include Digital Image Processing and Compiling Theory.
 
 - Outstanding Graduate Award (top 2%), South China Normal University, 2019.
 
-- Fifth place (out of 450 teams), ISBI 2019 C-NMC Challenge: Classification in Cancer Cell Imaging, 2019.
+- Fifth place (out of 450 teams), ISBI C-NMC Challenge: Classification in Cancer Cell Imaging, 2019.
 
 - Grand Prize for Asia and Pacific Mathematical Contest in Modeling (top 0.1%), 2018.
