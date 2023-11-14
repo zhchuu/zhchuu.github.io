@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "A Brief Investigation to the HA of Fashion MPP Database System"
+title: "A Brief Investigation to the HA of Mainstream MPP Database System"
 date: 2023-05-23
 categories: blog
 permalink: /:categories/:year/:month/:title.html
@@ -19,7 +19,7 @@ permalink: /:categories/:year/:month/:title.html
 ### Apache Doris & StarRocks (SR)
 
 <p align="center">
-    <img src="/assets/a-brief-investigation-to-the-ha-of-fashion-mpp-database-system/sr3.jpeg" width=650/>
+    <img src="/assets/a-brief-investigation-to-the-ha-of-mainstream-mpp-database-system/sr3.jpeg" width=650/>
     <br/> SR 3.0 架构（图源自参考）
 </p>
 
@@ -41,7 +41,7 @@ Doris 和 SR 在故障恢复、负载均衡和扩缩容上的能力基本都是�
 ### Apache HBase
 
 <p align="center">
-    <img src="/assets/a-brief-investigation-to-the-ha-of-fashion-mpp-database-system/hbase.png" width=650/>
+    <img src="/assets/a-brief-investigation-to-the-ha-of-mainstream-mpp-database-system/hbase.png" width=650/>
     <br/> HBase 架构（图源自参考）
 </p>
 

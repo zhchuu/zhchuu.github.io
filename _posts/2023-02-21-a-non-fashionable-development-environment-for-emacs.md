@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "A Non-fashion Development Environment for Emacs"
+title: "A Non-fashionable Development Environment for Emacs"
 date: 2023-02-21
 categories: blog
 permalink: /:categories/:year/:month/:title.html
@@ -100,13 +100,13 @@ $ du -h ./tags
 ``citre-peek``：打开小窗查看函数的定义。
 
 <p align="left">
-   <img src="/assets/a-non-fashion-development-environment-for-emacs/citre_peek.jpg" width=440/>
+   <img src="/assets/a-non-fashionable-development-environment-for-emacs/citre_peek.jpg" width=440/>
 </p>
 
 ``complete-at-point``：配合 ``company-mode`` 实现补全。
 
 <p align="left">
-   <img src="/assets/a-non-fashion-development-environment-for-emacs/complete_at_point.jpg" width=440/>
+   <img src="/assets/a-non-fashionable-development-environment-for-emacs/complete_at_point.jpg" width=440/>
 </p>
 
 速度很快，可以用 in a blink 来形容。做不到语意补全，但也够用。
@@ -144,7 +144,7 @@ $ cscope -Rbkq -i cscope.files
 ``cscope-find-functions-calling-this-function``：找到所有调用该函数的地方（并不是简单的 Grep 或 Ag 搜索）。
 
 <p align="left">
-   <img src="/assets/a-non-fashion-development-environment-for-emacs/cscope_find_functions_calling_this_function.jpg">
+   <img src="/assets/a-non-fashionable-development-environment-for-emacs/cscope_find_functions_calling_this_function.jpg">
 </p>
 
 可以看到搜索大约花费 1.7 秒，当然不同函数调用次数不同，时间会有一定的差异，但对于这么大的项目来说算得上合格（大部分时候我会配合 ``projectile-ag`` 来使用）。
