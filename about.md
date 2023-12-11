@@ -29,6 +29,17 @@ My other interests include Digital Image Processing and Compiling Theory.
 - 11/2019 [Ensemble Convolutional Neural Networks for Cell Classification in Microscopic Images](https://link.springer.com/chapter/10.1007/978-981-15-0798-4_5) (ISBI 2019 Workshop): An ensemble of state-of-the-art CNNs was adopted and ranked 5th in the ISBI 2019 C-NMC Challenge.
 
 
+**Projects**:
+<!--
+A general framework designed for the implementation of Class Incremental (or Continual) Learning (CIL) methods. This framework deconstructs popular CIL algorithms and abstracts them into a flexible and configurable training pipeline, including features such as multi-stage training, exemplar selection, configurable backbones and datasets. With the robust toolkit provided by the framework, researchers can easily reproduce the results of various studies and develop their own innovative algorithms. The codebase has developed into a new project that is well-maintained by a CIL research team and includes more SOTA methods. Please refer to the project page for more information.
+-->
+- [Continual-Learning-Reproduce](https://github.com/zhchuu/continual-learning-reproduce): A general framework designed for the implementation of Class Incremental (or Continual) Learning (CIL) methods. Researchers can easily reproduce the results of various studies and develop their own innovative algorithms.
+
+<!--
+Record your working time when you are using Emacs. A simpler option that only records working time locally using pure Elisp, without the additional features of third-party integration (compared with wakatime-mode and activity-watch-mode). It provides general overview of working time rather than a detailed analysis.
+-->
+- [Time-Tracking-Mode](https://github.com/zhchuu/time-tracking-mode): A simpler option that only records working time locally using pure Elisp, without the additional features of third-party integration.
+
 **Awards and Honors**
 
 - Outstanding Graduate Award (top 2%), South China Normal University, 2019.
